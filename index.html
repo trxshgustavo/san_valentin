@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Para mi Arquitecta</title>
+</head>
+<body>
+    <audio id="music" src="music.mp3" loop></audio>
+
+    <h1 id="mainTitle">¡Feliz San Valentín, Princesa!</h1>
+    
+    <button id="playMusic">Activar Música</button>
+    <p id="textLetter">¡Sube el volumen, mi amor!</p>
+    
+    <button id="openLetter">Da click aquí</button>
+    
+    <div id="letter">
+        <p>Pero que coño hago yo haciendo una carta para el 14 de febrero JAAJJAAJ tengo que admitir que nunca imaginé hacerlo y estoy feliz de que seas tú la primera y única persona a la que se la quiero hacer.</p>
+        <p>Quiero que sepas que eres de las mejores personas que tengo en mi vida actualmente y que más cariño le tengo y le voy a tener siempre, te amo con todo mi corazón y eso va a ser asi siempre aunque tu digas que me tienes chato eso va a ser imposible porque quiero pasar mi vida contigo</p>
+        <p>Un poco de texto de relleno decirte que yo vi videos donde decian que uno no se debe quedar con la primera persona que se encuentra y que debe probar nuevas experencias pero eso es lo unico que no tomo en cuenta, ya que yo no quiero estar con otra persona que no seas tú, y es rarooo que yo no pesque ese tipo de videos JAJJJAJAJ</p>
+        <p>Me encanta cada cosa de ti y nunca dejaré de decirte lo linda que te ves haciendo cualquier cosa, me gustas de todas las formas. Para mis ojos tu eres y serás perfecta.</p>
+        <p>Supongo que en esta carta no me debo extender mucho pero decirte muchas gracias por estar conmigo y ser mi primer valentin, estoy feliz de que sea contigo mi primera vez. Te amo demasiado mi princesita hermosa, eres la mejor polola, nunca pienses lo contrario. Mi tilina.</p>
+        <p>Atte: Tu ingeniero y programador experto</p>
+    </div>
+
+    <script>
+        document.getElementById("openLetter").addEventListener("click", function() {
+            // Cambiar el texto del h1
+            document.getElementById("mainTitle").textContent = "Te amo mucho, mi guaguita";
+            
+            // Ocultar botones y cambiar el h1
+            document.getElementById("playMusic").style.display = "none";
+            document.getElementById("openLetter").style.display = "none";
+            document.getElementById("textLetter").style.display = "none";
+            
+            // Mostrar carta con animación
+            let letter = document.getElementById("letter");
+            letter.style.display = "block";
+            setTimeout(() => {
+                letter.classList.add("show");
+            }, 10);
+        });
+
+        document.getElementById("playMusic").addEventListener("click", function() {
+            let music = document.getElementById("music");
+            music.muted = false;
+            music.play().catch(error => console.log(error)); // Previene errores en algunos navegadores
+            this.style.display = "none"; // Ocultar botón después de activarlo
+        });
+    </script>
+</body>
+</html>
